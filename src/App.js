@@ -2,17 +2,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import phonebookSelectors from './redux/phonebook/phonebook-selectors';
 import { Switch, Route } from 'react-router-dom';
-import routes from './components/views/routes';
+import routes from './views/routes';
 import AppBar from './components/AppBar/AppBar';
 import { lazy, Suspense } from 'react';
 import authOperation from './redux/auth/auth-operations';
 import PrivateRoute from './components/UserMenu/PrivateRoute';
 import PublicRoute from './components/UserMenu/PublicRoute';
 
-const HomeView = lazy(() => import('./components/views/HomeView'));
-const RegisterView = lazy(() => import('./components/views/RegisterView'));
-const LoginView = lazy(() => import('./components/views/LoginView'));
-const ContactView = lazy(() => import('./components/views/ContactsView'));
+const HomeView = lazy(() => import('./views/HomeView'));
+const RegisterView = lazy(() => import('./views/RegisterView'));
+const LoginView = lazy(() => import('./views/LoginView'));
+const ContactView = lazy(() => import('./views/ContactsView'));
 
 export default function App() {
   const isLoadingContact = useSelector(phonebookSelectors.getLoading);
